@@ -46,6 +46,7 @@ RUN apt-get update && apt-get install -y \
 COPY --from=build /target/bin/* /usr/local/bin
 COPY --from=build /target/fift /usr/local/lib/fift
 COPY --from=build /target/smartcont /usr/local/lib/smartcont
+COPY --from=build /target/lib /usr/local/lib
 
 ENV FIFTPATH=/usr/local/lib/fift
 ENV TVM_LINKER_LIB_PATH=/usr/local/lib/stdlib_sol_0_71_0.tvm
