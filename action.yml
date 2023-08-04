@@ -1,5 +1,5 @@
 name: tvm-action
-description: "Action for TVM"
+description: "Action for TVM can be used for development on TON, Everscale, Gosh, Venom"
 branding:
   icon: "play-circle"
   color: "gray-dark"

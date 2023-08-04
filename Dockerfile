@@ -35,7 +35,7 @@ RUN chmod +x /target/bin/*
 FROM ubuntu:20.04
 
 LABEL "com.github.actions.name"="TVM Action"
-LABEL "com.github.actions.description"="Action for TVM"
+LABEL "com.github.actions.description"="Action for TVM can be used for development on TON, Everscale, Gosh, Venom"
 LABEL "com.github.actions.icon"="play-circle"
 LABEL "com.github.actions.color"="gray-dark"
 
