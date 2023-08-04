@@ -13,12 +13,19 @@
 
 ### Docker
 
+#### Fift
 ```bash
 echo '4 10 * 2 + .s' | docker run --rm -i ghcr.io/ever-guild/tvm-action fift
+```
+#### Gosh
+```bash
+docker run --rm -v$(pwd):/src -w /src -u 1000 -it ghcr.io/ever-guild/tvm-action
+git clone gosh://0:b00a7a5a24740e4a7d6487d31969732f1febcaea412df5cc307400818055ad58/gosh/gosh
 ```
 
 ### GitHub Actions
 
+#### Fift
 ```yaml
 name: CI
 
@@ -30,4 +37,23 @@ jobs:
       - uses: ever-guild/tvm-action@v1
         with:
           args: echo '4 10 * 2 + .s' | fift
+```
+
+#### Gosh
+```yaml
+name: CI
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: ever-guild/tvm-action@v1
+        with:
+          args: git clone gosh://0:b00a7a5a24740e4a7d6487d31969732f1febcaea412df5cc307400818055ad58/gosh/gosh
+      # only for write operations
+      - run: |
+          mkdir p $HOME/.gosh
+          echo $CONFIG | base64 -d > $HOME/.gosh/config.json
+        env:
+          CONFIG: ${{ secrets.GOSH_CONFIG_BASE64 }}
 ```
