@@ -2,10 +2,11 @@
 
 ## Toolchain
 
-- fift, func, lite-client, tonlib-cli, etc `v2023.06`
-- solc, sold `v0.71.0`
-- tvm_linker `v0.20.5`
-- tonos-cli `v0.35.4`
+- [fift, func, lite-client, tonlib-cli, etc](https://github.com/ton-blockchain/ton) `v2023.06`
+- [solc, sold](https://github.com/tonlabs/TON-Solidity-Compiler) `v0.71.0`
+- [tvm_linker](https://github.com/tonlabs/TVM-linker) `v0.20.5`
+- [tonos-cli](https://github.com/tonlabs/tonos-cli) `v0.35.4`
+
 
 ## Example usage
 
