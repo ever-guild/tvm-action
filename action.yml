@@ -1,0 +1,8 @@
+name: tvm-action
+description: "Action for TVM"
+branding:
+  icon: "play-circle"
+  color: "gray-dark"
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/ever-guild/tvm-action'
