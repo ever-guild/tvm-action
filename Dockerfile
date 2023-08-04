@@ -29,6 +29,11 @@ RUN 7z x stdlib_sol_0_71_0.tvm.gz && rm stdlib_sol_0_71_0.tvm.gz && mv * /target
 RUN wget --quiet https://github.com/tonlabs/tonos-cli/releases/download/0.35.4/tonos-cli-0_35_4-linux.gz
 RUN 7z x tonos-cli-0_35_4-linux.gz && rm tonos-cli-0_35_4-linux.gz && mv * /target/bin
 
+RUN wget --quiet https://github.com/gosh-sh/gosh/releases/download/5.1.29/git-remote-gosh-linux-amd64.tar.gz
+RUN 7z x git-remote-gosh-linux-amd64.tar.gz -so | 7z x -aoa -si -ttar -o"git-remote-gosh-linux-amd64" &&\
+    rm git-remote-gosh-linux-amd64.tar.gz &&\
+    mv git-remote-gosh-linux-amd64/* /target/bin
+
 RUN chmod +x /target/bin/*
 
 #FROM alpine:3.18.2
@@ -41,6 +46,8 @@ LABEL "com.github.actions.color"="gray-dark"
 
 RUN apt-get update && apt-get install -y \
     openssl \
+    git \
+    make \
     && apt-get clean
 
 COPY --from=build /target/bin/* /usr/local/bin

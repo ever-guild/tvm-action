@@ -6,7 +6,8 @@
 - [solc, sold](https://github.com/tonlabs/TON-Solidity-Compiler) `v0.71.0`
 - [tvm_linker](https://github.com/tonlabs/TVM-linker) `v0.20.5`
 - [tonos-cli](https://github.com/tonlabs/tonos-cli) `v0.35.4`
-
+- [git-remote-gosh](https://docs.gosh.sh/working-with-gosh/git-remote-helper/) `v5.1.0`
+- GNU Make `v4.2.1`
 
 ## Example usage
 
