@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: ever-guild/tvm-action@v1.0.0
+      - uses: ever-guild/tvm-action@v1
         with:
           args: echo '4 10 * 2 + .s' | fift
 ```

@@ -2,7 +2,7 @@ name: image
 on:
   push:
     tags:
-      - v*
+      - v1.*
     branches:
       - main
   pull_request:
