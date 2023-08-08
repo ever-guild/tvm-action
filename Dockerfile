@@ -37,7 +37,7 @@ RUN 7z x git-remote-gosh-linux-amd64.tar.gz -so | 7z x -aoa -si -ttar -o"git-rem
 RUN chmod +x /target/bin/*
 
 #FROM alpine:3.18.2
-FROM ubuntu:20.04
+FROM python:3.10.12-slim-bullseye
 
 LABEL "com.github.actions.name"="TVM Action"
 LABEL "com.github.actions.description"="Action for TVM can be used for development on TON, Everscale, Gosh, Venom"
@@ -54,6 +54,9 @@ COPY --from=build /target/bin/* /usr/local/bin
 COPY --from=build /target/fift /usr/local/lib/fift
 COPY --from=build /target/smartcont /usr/local/lib/smartcont
 COPY --from=build /target/lib /usr/local/lib
+
+RUN pip install bitstring==3.1.9 toncli
+COPY etc/config.ini /root/.config/toncli/config.ini
 
 ENV FIFTPATH=/usr/local/lib/fift
 ENV TVM_LINKER_LIB_PATH=/usr/local/lib/stdlib_sol_0_71_0.tvm
