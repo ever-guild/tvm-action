@@ -2,13 +2,16 @@
 
 ## Toolchain
 
-- [fift, func, lite-client, tonlib-cli, etc](https://github.com/ton-blockchain/ton) `v2023.10`
-- [toncli](https://github.com/disintar/toncli/releases) `v0.0.43`
-- [solc, sold](https://github.com/tonlabs/TON-Solidity-Compiler) `v0.71.0`
-- [tvm_linker](https://github.com/tonlabs/TVM-linker) `v0.20.5`
-- [tonos-cli](https://github.com/tonlabs/tonos-cli) `v0.35.4`
-- [git-remote-gosh](https://docs.gosh.sh/working-with-gosh/git-remote-helper/) `v6.1.35`
-- GNU Make `v4.3`
+- [fift, func, lite-client, tonlib-cli, etc](https://github.com/ton-blockchain/ton/releases/tag/v2024.06) `v2024.06`
+- [`sold`](https://github.com/tonlabs/TON-Solidity-Compiler) `v0.69.0` `v0.70.0` ... `v0.76.0`
+- [`ever-asm`, `ever-disasm`](https://github.com/everx-labs/ever-assembler) `v1.6.9`
+- [tvm-asm](https://github.com/broxus/everscale-asm) `r211356a`
+- [ever-cli](https://github.com/everx-labs/ever-cli) `v0.38.2`
+- [git-remote-gosh](https://docs.gosh.sh/working-with-gosh/git-remote-helper/) `v6.2.36`
+- [sold-gosh](https://github.com/gosh-sh/TON-Solidity-Compiler) `v0.72.0`
+- [tvm-cli](https://github.com/tvmlabs/tvm-sdk/tree/main/tvm_cli) `v2.0.1.an`
+- GNU Make `v4.4.1`
+- git `v2.45.2`
 
 ## Example usage
 
@@ -66,6 +69,16 @@ jobs:
 ```bash
 got clone https://github.com/ever-guild/tvm-action.git
 cd tvm-action
+```
+
+#### Build image
+```bash
 docker build -t tvm-action .
 docker run --rm -it tvm-action bash
+```
+
+#### Build develop image
+```bash
+docker build -t tvm-action-build --target build .
+docker run --rm -it tvm-action-build bash
 ```
